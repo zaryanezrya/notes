@@ -1,0 +1,36 @@
+[project]
+name = "experiments"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ivan Sharun",email = "ivan@sha.run"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel (>=6.29.5,<7.0.0)",
+    "pydantic (>=2.11.2,<3.0.0)",
+    "torch (>=2.6.0,<3.0.0)",
+    "torchvision (>=0.21.0,<0.22.0)",
+    "torchaudio (>=2.6.0,<3.0.0)",
+    "black (>=25.1.0,<26.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
+    "matplotlib (>=3.10.1,<4.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "pytorch-gpu-src"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"
+
+
+[tool.poetry.dependencies]
+torch = {source = "pytorch-gpu-src"}
+torchvision = {source = "pytorch-gpu-src"}
+torchaudio = {source = "pytorch-gpu-src"}
